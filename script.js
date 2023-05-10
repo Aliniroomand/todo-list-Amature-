@@ -1,47 +1,16 @@
+//  There is   parts  for JS codes:
+// 1-- todo input text and add it to list
+// 2-- for filtering todos
+// 3--for complete and deleting todos  
+// 4--for html content while reloading
+// 5--for Local-Storage
+
+
+
+// 1-- todo input text and add it to list
 const todoInput=document.querySelector(".todo-input");
 const todoButton=document.querySelector(".todo-button");
-const todoLi=document.querySelector(".todo-list")
-const filterOption=document.querySelector(".filter-todo");
-
-
-
-
 todoButton.addEventListener("click",addTodo);
-todoLi.addEventListener("click",deleteCompelete);
-filterOption.addEventListener("click",filterTodo);
-//for html content while reloading
-document.addEventListener("DOMContentLoaded",getTodos);
-
-
-
-
-
-
-function filterTodo(event){
-    const todos=todoLi.childNodes;
-    todos.forEach( (todo) => {
-        if (event.target.value === "all"){
-            todo.style.display= "flex"
-            }
-        if(event.target.value === "completed"){
-            if (todo.classList.contains("completed")){
-                todo.style.display= "flex"
-                }else{
-                    todo.style.display="none"
-                }
-        }
-        if (event.target.value === "uncompleted")
-            if (todo.classList.contains("completed")){
-                todo.style.display= "none"
-                }else{
-                    todo.style.display="flex"
-                }
-    })
-
-}
-
-
-//for our container
 function addTodo(event){
     event.preventDefault();
     const todoDiv=document.createElement("div");
@@ -72,6 +41,47 @@ function addTodo(event){
 }
 
 
+
+
+// 2-- for filtering todos
+const filterOption=document.querySelector(".filter-todo");
+filterOption.addEventListener("click",filterTodo);
+function filterTodo(event){
+
+
+
+
+
+
+
+
+
+    const todos=todoLi.childNodes;
+    todos.forEach( (todo) => {
+        if (event.target.value === "all"){
+            todo.style.display= "flex"
+            }
+        if(event.target.value === "completed"){
+            if (todo.classList.contains("completed")){
+                todo.style.display= "flex"
+                }else{
+                    todo.style.display="none"
+                }
+        }
+        if (event.target.value === "uncompleted")
+            if (todo.classList.contains("completed")){
+                todo.style.display= "none"
+                }else{
+                    todo.style.display="flex"
+                }
+    })
+
+}
+
+
+// 3--for complete and deleting todos  
+const todoLi=document.querySelector(".todo-list")
+todoLi.addEventListener("click",deleteCompelete);
 function deleteCompelete (event){
     const item=event.target
     
@@ -86,30 +96,9 @@ function deleteCompelete (event){
     }
 }
 
-function saveLocalTodo (todo){
-    let todos;
-    if( localStorage.getItem("todos") === null){
-        todos=[];
-    }
-        else{
-            todos=JSON.parse(localStorage.getItem("todos"))
-        }
-        todos.push(todo);
-        localStorage.setItem("todos",JSON.stringify(todos))
-}
 
-function removeLocalTodo(todo){
-    let todos;
-    if (localStorage.getItem("todos") === null){
-        todos=[]
-    } else {
-        todos =JSON.parse(localStorage.getItem("todos"));
-    };
-    const todoIndex=todo.children[0].innerText
-    todos.splice(todos.indexOf(todoIndex),1);
-    localStorage.setItem("todos",JSON.stringify(todos))
-}
-
+//4--for html content while reloading
+document.addEventListener("DOMContentLoaded",getTodos);
 function getTodos(){
     let todos;
     if (localStorage.getItem("todos") === null){
@@ -117,6 +106,8 @@ function getTodos(){
     } else {
     todos =JSON.parse(localStorage.getItem("todos"));
     };
+
+
 todos.forEach( (todo)=> {
 
         const todoDiv=document.createElement("div");
@@ -149,3 +140,31 @@ todos.forEach( (todo)=> {
 
     )   
 }
+
+
+//5--for Local-Storage
+
+function saveLocalTodo (todo){
+    let todos;
+    if( localStorage.getItem("todos") === null){
+        todos=[];
+    }
+        else{
+            todos=JSON.parse(localStorage.getItem("todos"))
+        }
+        todos.push(todo);
+        localStorage.setItem("todos",JSON.stringify(todos))
+}
+
+function removeLocalTodo(todo){
+    let todos;
+    if (localStorage.getItem("todos") === null){
+        todos=[]
+    } else {
+        todos =JSON.parse(localStorage.getItem("todos"));
+    };
+    const todoIndex=todo.children[0].innerText
+    todos.splice(todos.indexOf(todoIndex),1);
+    localStorage.setItem("todos",JSON.stringify(todos))
+}
+
