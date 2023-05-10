@@ -40,22 +40,9 @@ function addTodo(event){
 
 }
 
-
-
-
-// 2-- for filtering todos
 const filterOption=document.querySelector(".filter-todo");
 filterOption.addEventListener("click",filterTodo);
 function filterTodo(event){
-
-
-
-
-
-
-
-
-
     const todos=todoLi.childNodes;
     todos.forEach( (todo) => {
         if (event.target.value === "all"){
@@ -77,6 +64,7 @@ function filterTodo(event){
     })
 
 }
+
 
 
 // 3--for complete and deleting todos  
@@ -141,9 +129,7 @@ todos.forEach( (todo)=> {
     )   
 }
 
-
-//5--for Local-Storage
-
+///--for Local-Storage
 function saveLocalTodo (todo){
     let todos;
     if( localStorage.getItem("todos") === null){
@@ -167,4 +153,3 @@ function removeLocalTodo(todo){
     todos.splice(todos.indexOf(todoIndex),1);
     localStorage.setItem("todos",JSON.stringify(todos))
 }
-
