@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fa">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> todo-list</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css">
+  <meta name="author" content="Ali_ND">
+</head>
+
+
+<body>
+<div class="notepad">
+  <header>
+    <h1>Todo List</h1>
+  </header>
+  <form>
+    <input placeholder="چیو یادت بیارم؟" type="text" class="todo-input" />
+    <img class="todo-button" src="./images/plus sign.png" alt="plus-sign">
+    <div class="select">
+    <select name="todos" class="filter-todo">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="uncompleted">Uncompleted</option>
+      </select>
+    </div>
+  </form>
+  <div class="todo-container">
+    <ul class="todo-list"></ul>
+  </div>
+
+  <script src="./script.js"></script>
+</div>
+</body>
+
+</html>

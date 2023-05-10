@@ -1,0 +1,189 @@
+/* !styles has 3parts:*/
+
+/** 1-rest styles */
+/** 2-title text style */
+/** 3-input place and sorting btn*/
+
+
+
+
+/** 1-rest styles */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notepad{
+  background-image:url(./images/a12903f9b0eee457230cf692bec3a964.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 120px;
+  margin-top: -30px;
+  
+}
+
+
+/** 2-title text style */
+header h1{
+  color:black ;
+  text-shadow: 5px 5px 5px rgba(21, 21, 21, 0.632),
+                -5px -5px 5px rgba(68, 68, 68, 0.42),
+                -2px -2px 5px rgb(255, 255, 255);
+margin-top: -10px;
+}
+header {
+  font-size: 2rem;
+  text-shadow: 3px 1px 2px rgb(93, 122, 93);
+  display: grid;
+  place-items: center;
+}
+
+/** 3-input place and sorting btns*/
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  gap: 6px;
+  margin: 10px auto;
+}
+form input,
+form button {
+  margin-inline:20px;
+  font-size: 130px;
+  border: none;
+  background: white;
+  box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.516);
+
+}
+
+form input {
+  width: 300px;
+  padding-inline: 70px;
+  border-radius: 50%;
+  }
+form img:hover {
+  transform:rotate(180deg);
+  transition: .5s;
+  cursor: pointer;
+}
+
+.todo-input ,
+ .todo-button{
+  font-size: 25px;
+  height:50px
+}
+
+.filter-todo{
+  height: 50px;
+  font-size: 15px;
+  box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.435);
+  padding-inline: 20px;
+  
+}
+form button {
+  color: #c44444;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #ff006a;
+  color: white;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  list-style: none;
+  border-radius: 10px;
+  height: 90vh;
+  
+}
+select {
+  border-radius: 100px;
+  color: #c4447a;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 10px;
+  border-radius: 50%;
+  background: #c336ac;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+  margin-top: 10px;
+  width: 350px;
+  flex-wrap: wrap;
+  box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.44);
+ border-radius: 30px;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background-image: url(./images/red-cross.png);
+  background-size:contain;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.615);
+border-radius:  30px; ;
+}
+.complete-btn {
+  background-image: url(./images/done-png.png);
+}
+.todo-item {
+  padding: 5px 20px;
+}
+
+.fa-trash,
+.fa-check:hover {
+  pointer-events:visible;;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.8;
+  background: #dc619441;
+}
+
+
