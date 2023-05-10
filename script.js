@@ -129,7 +129,7 @@ todos.forEach( (todo)=> {
     )   
 }
 
-///--for Local-Storage
+///5--for Local-Storage
 function saveLocalTodo (todo){
     let todos;
     if( localStorage.getItem("todos") === null){
