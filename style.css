@@ -3,7 +3,7 @@
 /** 1-rest styles */
 /** 2-title text style */
 /** 3-input place and sorting btn*/
-
+/** 4-media query for small mobile sizes **/
 
 
 
@@ -16,16 +16,23 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url(./images/mainBG.jpg);
+  background-repeat: repeat-x;
+  overflow-y: hidden;
 }
 .notepad{
   background-image:url(./images/a12903f9b0eee457230cf692bec3a964.jpg);
   background-repeat: no-repeat;
   background-size: contain;
-  padding-top: 120px;
-  margin-top: -30px;
+background-position: bottom;
+position: fixed;
+height: 100vh;
+width: 500px;
+top: 10px;
   
 }
 
@@ -53,7 +60,10 @@ form {
   flex-direction: column;
   width: 500px;
   gap: 6px;
+  left: calc(50% - 250px);
   margin: 10px auto;
+  top: 100px;
+  position: fixed;
 }
 form input,
 form button {
@@ -109,7 +119,11 @@ form button:hover {
 .todo-list {
   list-style: none;
   border-radius: 10px;
-  height: 90vh;
+  top: 50%;
+  height: 50vh;
+  position: fixed;
+  width: 450px;
+  left: calc(50% - 225px);
   
 }
 select {
@@ -146,10 +160,11 @@ select {
   align-items: center;
   transition: all 1s ease;
   margin-top: 10px;
-  width: 350px;
+  width: calc(80% - 70px);
   flex-wrap: wrap;
   box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.44);
  border-radius: 30px;
+ margin-inline: 70px;
 }
 
 .todo li {
@@ -186,4 +201,30 @@ border-radius:  30px; ;
   background: #dc619441;
 }
 
-
+/** MQ **/
+@media (width<= 375px){
+  header h1{
+    position: fixed;
+    top: 50px;
+  }
+ 
+  .notepad{
+    background-image:url(./images/a12903f9b0eee457230cf692bec3a964.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 120px;
+    margin-top: -30px;
+    left: calc(50% - 160px);
+    width: 100%;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 300px; */
+    gap: 6px;
+    margin: 10px auto;
+  }
+}
